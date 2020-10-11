@@ -1,4 +1,13 @@
-# pokemons project
+# Projeto Pokemon
+
+Projeto desenvolvido para melhorar às práticas com o uso do Quarkus, postgresql.
+
+Foi utilizado o site para base:
+
+https://www.pokemon.com/br/pokedex/starmie - Para ter uma idea de como seria os cards.
+https://pt.wikipedia.org/wiki/Lista_de_Pok%C3%A9mon - O nome de todos os pokemons da 1ª temporada.
+
+## pokemons project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -46,13 +55,5 @@ If you want to learn more about building native executables, please consult http
 
 Guide: https://quarkus.io/guides/rest-json
 
-
-
-Projeto Pokemon
-
-Projeto desenvolvido para melhorar às práticas com o uso do Quarkus, postgresql.
-Foi utilizado o site para base:
-https://www.pokemon.com/br/pokedex/starmie - Para ter uma idea de como seria os cards.
-https://pt.wikipedia.org/wiki/Lista_de_Pok%C3%A9mon - O nome de todos os pokemons da 1ª temporada.
 
 
