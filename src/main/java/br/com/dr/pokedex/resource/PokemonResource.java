@@ -2,34 +2,27 @@ package br.com.dr.pokedex.resource;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-import javax.ws.rs.Consumes;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.com.dr.pokedex.model.Pokemon;
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-import io.quarkus.hibernate.orm.panache.PanacheQuery;
+import br.com.dr.pokedex.service.PokemonService;
 
 @Path("/pokemon")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 public class PokemonResource {
 
+	@Inject
+	PokemonService service;
 
 	@GET
-    @Transactional
-    public PanacheQuery<PanacheEntityBase> list() {
-       return Pokemon.findAll();
+    @javax.ws.rs.Produces(MediaType.APPLICATION_JSON)
+    public List<Pokemon> listar() {
+		return service.listarTodos();
     }
 
-    @POST
-    public Pokemon cadastrarPokemon (Pokemon pokemon) {
-    	pokemon.persist();
-        return pokemon;
-    }
+	 
+	
 
 }

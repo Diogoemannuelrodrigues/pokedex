@@ -1,21 +1,25 @@
 package br.com.dr.pokedex.service;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.Path;
+import java.util.List;
 
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+
+import br.com.dr.pokedex.model.Pokemon;
+import br.com.dr.pokedex.repository.PokemonRepository;
 
 @ApplicationScoped
-@RegisterRestClient
-@Path("/pokemons")
-public interface PokemonService {
+public class PokemonService {
+	
+	@Inject
+	PokemonRepository pokemonRepository;
 
-//	@Inject
-//	@RestClient
-//	private PokemonRepository repo;
-//
-//	public static List<Pokemon> listarTodos(){
-//		return (List<Pokemon>) repo.findAll();
-//	}
+	public List<Pokemon> listarTodos() {
+		return pokemonRepository.findAll().list();
+	}
 
 }
+
+
+
+

@@ -1,17 +1,15 @@
 package br.com.dr.pokedex.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import io.quarkus.hibernate.orm.panache.PanacheQuery;
 
 @Entity
 @Table(name = "pokemon")
-public class Pokemon extends PanacheEntityBase {
+public class Pokemon {
 
 	@Id
 	@GeneratedValue
@@ -132,6 +130,10 @@ public class Pokemon extends PanacheEntityBase {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public static PanacheQuery<Pokemon> findAll() {
+		return Pokemon.findAll();
 	}
 
 }
