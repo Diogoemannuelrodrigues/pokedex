@@ -10,16 +10,16 @@ import br.com.dr.pokedex.repository.PokemonRepository;
 
 @ApplicationScoped
 public class PokemonService {
-	
+
 	@Inject
-	PokemonRepository pokemonRepository;
+	PokemonRepository poke;
 
 	public List<Pokemon> listarTodos() {
-		return pokemonRepository.findAll().list();
+		return poke.findAll().list();
+	}
+	
+	public void salvar(Pokemon pokemon) {
+		poke.persist(pokemon);
 	}
 
 }
-
-
-
-

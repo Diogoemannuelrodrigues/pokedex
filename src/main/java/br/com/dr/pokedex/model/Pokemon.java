@@ -132,8 +132,4 @@ public class Pokemon {
 		return true;
 	}
 
-	public static PanacheQuery<Pokemon> findAll() {
-		return Pokemon.findAll();
-	}
-
 }
