@@ -22,4 +22,14 @@ public class PokemonService {
 		poke.persist(pokemon);
 	}
 
+
+	public Pokemon find (Long id) {
+		return poke.findById(id);
+	}
+
+	public void deleta(Pokemon pokemon){
+		poke.delete(pokemon);
+	}
+	
+
 }

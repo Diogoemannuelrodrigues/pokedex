@@ -5,15 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import io.quarkus.hibernate.orm.panache.PanacheQuery;
-
 @Entity
 @Table(name = "pokemon")
 public class Pokemon {
 
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Long id;
 	private String nome;
 	private Double peso;
 	private Double altura;
@@ -35,11 +33,11 @@ public class Pokemon {
 		this.genero = genero;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
